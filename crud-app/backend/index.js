@@ -5,6 +5,11 @@ require('dotenv').config()
 const {z} = require('zod')
 const { todo } = require('./db/db')
 
+const cors = require('cors')
+
+
+app.use(cors())
+
 
 const todoSchema = z.object({
     title: z.string(),

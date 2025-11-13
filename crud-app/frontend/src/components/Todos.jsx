@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Todos({title, description, isDone}) {
+function Todos({_id, title, description, isDone}) {
 
   return (
-    <div>
+    <div key={_id}>
         <div>
             {title}
         </div>
@@ -11,7 +11,7 @@ function Todos({title, description, isDone}) {
             {description}
         </div>
         <button>
-            {isDone}
+            {isDone ? "Mark As Not Done" : "Mark As DOne"}
         </button>
       
     </div>
