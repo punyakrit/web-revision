@@ -41,8 +41,23 @@ app.get('/',async (req,res)=>{
 })
 
 app.put('/', async(req,res)=>{
+    const {id, title, description, isDone} = req.body
+
+    const update = await todo.updateOne({
+        _id : id
+    },{
+        title,
+        description,
+        isDone,
+    })
+
+    res.json({
+        msg : "Todo Updated"
+    })
     
 })
+
+
 
 
 
